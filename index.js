@@ -12,8 +12,9 @@ const cors = require("cors");
 const xss = require("xss-clean");
 const rateLimit = require("express-rate-limit");
 
+
 // router import
-const allRouter = require("./src/Router/allRouter");
+const AllRouter = require("./src/Router/AllRouter");
 //
 const app = express();
 dotenv.config();
@@ -42,7 +43,7 @@ mongoose
 
 // routing
 
-app.use("/all", allRouter);
+app.use("/all",AllRouter);
 
 
 // undefined route
