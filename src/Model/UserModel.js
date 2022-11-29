@@ -1,12 +1,16 @@
 const mongoose = require("mongoose");
 const userModel = mongoose.Schema({
   firstname: {
-    type: String,
+    type:String,
     required: true,
+    maxLength: [30, "Name cannot exceed 30 characters"],
+    minLength: [4, "Name should have more than 4 characters"],
   },
   lastname: {
-    type: String,
+    type:String,
     required: true,
+    maxLength: [30, "Name cannot exceed 30 characters"],
+    minLength: [4, "Name should have more than 4 characters"],
   },
   email: {
     type: String,
@@ -16,6 +20,13 @@ const userModel = mongoose.Schema({
   password: {
     type: String,
     required: true,
+    minLength: [8, "Password should be greater than 8 characters"],
+    select: false,
+  },
+  address: {
+    type: String,
+    required: true,
+    
   },
   mobile: {
     type: String,
